@@ -7,17 +7,17 @@
         </div>
         <div class="row my-3" id="grid">
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4 mb-4 d-flex justify-content-center"
-                *ngFor="let item of itemsList"
-                (click)="onItemClick(item)"
-                (mouseenter)="onHoverItem(item)"
-                (mouseleave)="onLeaveItem(item)">
-                <button [ngClass]="newItemsBackground"
-                type="button" class="btn item-box px-4" data-toggle="modal" data-target="#itemModal">
-                </button>
+                *ngFor="let item of itemsList; let i = index" [attr.data-index]="i"
+                (click)="onItemClick(item.thumnbail ? item.thumnbail : '')"
+                (mouseenter)="onHoverItem(i + 1)"
+                (mouseleave)="onLeaveItem(i + 1)">
+                <img src="{{item.image ? item.image : ''}}" class="img-fluid rounded btn item-box animated fadeIn"
+                data-toggle="modal" data-target="#itemModal"
+                [ngClass]="newItemsBackground">
             </div>
         </div>
     </div>
-    <div class="modal" tabindex="-1" role="dialog" aria-labelledby="#itemModal" id="itemModal" aria-hidden="true">
+    <div class="modal animated fadeIn" tabindex="-1" role="dialog" aria-labelledby="#itemModal" id="itemModal" aria-hidden="true">
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content modal-content-custom">
                 <div class="modal-body modal-body-custom p-4">
@@ -25,9 +25,9 @@
                         aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <button type="button" class="btn item-box-modal w-100">
-                        Item #{{modalData}}
-                    </button>
+                    <div class="btn item-box-modal w-100">
+                        <img src="{{modalData}}" class="img-thumbnail rounded">
+                    </div>
                 </div>
             </div>
         </div>

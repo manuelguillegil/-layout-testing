@@ -1,16 +1,16 @@
 /* GRID SECTION */
 
 .item-box {
-    height: 7rem;
-    width: 7rem;
+    max-height: 7rem;
+    width: auto;
     background: #e4e4e4;
 }
 
-#grid > div:nth-child(4) button{
+#grid > div:nth-child(4) img{
     background: #494848;
 }
 
-#grid > div:nth-child(10) button {
+#grid > div:nth-child(10) img {
     background: #0f0e0e;
 }
 
@@ -32,9 +32,13 @@
 }
 
 .item-box-modal {
-    background-color: #b3b3b3;
-    height: 10em;
+    max-height: 10em;
     width: auto;
+
+    img {
+        max-height: 10em;
+        max-width: auto;
+    }
 }
 
 .btn-cancel {

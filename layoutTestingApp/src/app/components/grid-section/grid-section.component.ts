@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ItemsService } from 'src/app/services/items.service';
 
 @Component({
   selector: 'app-grid-section',
@@ -7,26 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GridSectionComponent implements OnInit {
 
-  itemsList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+  itemsList = [];
   modalData = '';
   newItemsBackground = '';
 
-  constructor() { }
+  constructor(
+    private itemsService: ItemsService,
+  ) { }
 
   ngOnInit() {
+    this.itemsService.getItems().then(items => {
+      this.itemsList = items;  
+    });
   }
 
-  onItemClick(item) {
-    this.modalData = item;
+  onItemClick(itemImage) {
+    this.modalData = itemImage;
   }
 
   onHoverItem(item) {
-    console.log(item);
-    
     if(item === 4) {
-      this.newItemsBackground = 'fourth-item-background';
-      console.log(this.newItemsBackground);
-      
+      this.newItemsBackground = 'fourth-item-background';   
     } else if (item === 10) {
       this.newItemsBackground = 'tenth-item-background';
     }
