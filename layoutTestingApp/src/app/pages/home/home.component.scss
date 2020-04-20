@@ -1,0 +1,107 @@
+    /* HEADER */
+  
+header {
+    height: 20rem;
+}
+
+.carousel-item img {
+    height: 20rem;
+}
+    
+.img-gradient:after {
+content:'';
+    position: absolute;
+    left: 0; 
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    display: inline-block;
+    background: -moz-linear-gradient(bottom, #343a403b 25%,rgba(34, 34, 34, 0.9) 100%); /* FF3.6+ */
+    background: -webkit-linear-gradient(bottom, #343a403b 25%,rgba(34, 34, 34, 0.9) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(bottom, #343a403b 25%,rgba(34, 34, 34, 0.9) 100%); /* Opera 11.10+ */
+    background: linear-gradient(to bottom, #343a403b 25%,rgba(34, 34, 34, 0.9) 100%); /* W3C */
+}
+  
+/* GRID SECTION */
+
+.item-box {
+    height: 7rem;
+    width: 7rem;
+    background: #e4e4e4;
+}
+
+#grid > div:nth-child(4) button{
+    background: #494848;
+}
+
+#grid > div:nth-child(10) button {
+    background: #0f0e0e;
+}
+
+.fourth-item-background {
+    background: #494848 !important;
+}
+
+.tenth-item-background {
+    background: #0f0e0e !important;
+}
+
+/* Modal */
+.modal-header-custom {
+    border: none;
+}
+
+.modal-content-custom {
+    background-color: #e4e4e4;
+}
+
+.item-box-modal {
+    background-color: #b3b3b3;
+    height: 10em;
+    width: auto;
+}
+
+.btn-cancel {
+    left: 92.5%;
+    top: 2%;
+}
+
+/* 
+Por definición del operador "~" solamente podría cambiar el background color de los elementos hermanos siguientes
+de los especificados en el hover (en este caso, el item 4 y 10). Por lo que decidí manejar este requerimiento mediante
+un script en javascript para manejar el caso de TODOS los hermanos independientemente de si son los sucesores del elemento o no
+
+#grid > div:nth-child(4):hover ~ div button{
+background: #494848;
+} 
+
+#grid > div:nth-child(10):hover ~ div button{
+background: #0f0e0e;
+}
+*/
+
+/* Dispositivos moviles */
+@media (max-width: 575.98px) { 
+    .navbar-custom {
+        min-height: 8.5vh;
+    }
+
+    header {
+        height: 10rem;
+    }
+
+    .carousel-item img {
+        height: 10rem;
+    }
+
+    .carousel-caption-custom {
+        font-size: 0.4rem;
+    }
+}
+
+/* Dispositivos pequeños y medianos como tablets */
+@media (min-width: 576px) and (max-width: 991.98px) { 
+    .navbar-custom {
+        min-height: 8vh;
+    }
+}
