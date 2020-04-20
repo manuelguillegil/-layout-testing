@@ -91,6 +91,7 @@ export class ItemsService {
       },
     ]
 
+    // A pesar de ser dataDummie, se retorna como promesa para "simular" la obtención por recurso de una API
     return Promise.resolve(dataDummie);
   }
 }

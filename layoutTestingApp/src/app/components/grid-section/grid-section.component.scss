@@ -3,23 +3,27 @@
 .item-box {
     max-height: 7rem;
     width: auto;
-    background: #e4e4e4;
+    background: var(--light-gray);
 }
 
-#grid > div:nth-child(4) img{
-    background: #494848;
+#grid > div:nth-child(4){
+    img {
+        background: var(--dark-gray);
+    }
 }
 
-#grid > div:nth-child(10) img {
-    background: #0f0e0e;
+#grid > div:nth-child(10) {
+    img {
+        background: var(--dark-gray-secondary);
+    }
 }
 
 .fourth-item-background {
-    background: #494848 !important;
+    background: var(--dark-gray) !important;
 }
 
 .tenth-item-background {
-    background: #0f0e0e !important;
+    background: var(--dark-gray-secondary) !important;
 }
 
 /* Modal */
@@ -28,7 +32,7 @@
 }
 
 .modal-content-custom {
-    background-color: #e4e4e4;
+    background-color: var(--light-gray);
 }
 
 .item-box-modal {
@@ -51,11 +55,11 @@ Por definición del operador "~" solamente podría cambiar el background color d
 de los especificados en el hover (en este caso, el item 4 y 10). Por lo que decidí manejar este requerimiento mediante
 un script en javascript para manejar el caso de TODOS los hermanos independientemente de si son los sucesores del elemento o no
 
-#grid > div:nth-child(4):hover ~ div button{
+#grid > div:nth-child(4):hover ~ div img{
 background: #494848;
 } 
 
-#grid > div:nth-child(10):hover ~ div button{
+#grid > div:nth-child(10):hover ~ div img{
 background: #0f0e0e;
 }
 */
