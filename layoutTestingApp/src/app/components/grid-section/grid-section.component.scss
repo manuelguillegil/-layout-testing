@@ -1,0 +1,57 @@
+/* GRID SECTION */
+
+.item-box {
+    height: 7rem;
+    width: 7rem;
+    background: #e4e4e4;
+}
+
+#grid > div:nth-child(4) button{
+    background: #494848;
+}
+
+#grid > div:nth-child(10) button {
+    background: #0f0e0e;
+}
+
+.fourth-item-background {
+    background: #494848 !important;
+}
+
+.tenth-item-background {
+    background: #0f0e0e !important;
+}
+
+/* Modal */
+.modal-header-custom {
+    border: none;
+}
+
+.modal-content-custom {
+    background-color: #e4e4e4;
+}
+
+.item-box-modal {
+    background-color: #b3b3b3;
+    height: 10em;
+    width: auto;
+}
+
+.btn-cancel {
+    left: 92.5%;
+    top: 2%;
+}
+
+/* 
+Por definición del operador "~" solamente podría cambiar el background color de los elementos hermanos siguientes
+de los especificados en el hover (en este caso, el item 4 y 10). Por lo que decidí manejar este requerimiento mediante
+un script en javascript para manejar el caso de TODOS los hermanos independientemente de si son los sucesores del elemento o no
+
+#grid > div:nth-child(4):hover ~ div button{
+background: #494848;
+} 
+
+#grid > div:nth-child(10):hover ~ div button{
+background: #0f0e0e;
+}
+*/

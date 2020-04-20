@@ -1,0 +1,35 @@
+<section class="w-100">
+    <div class="container bg-secondary p-2">
+        <div class="row">
+            <div class="d-flex justify-content-center w-100">
+                <h2 class="text-white">Grid Section</h2>
+            </div>
+        </div>
+        <div class="row my-3" id="grid">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4 mb-4 d-flex justify-content-center"
+                *ngFor="let item of itemsList"
+                (click)="onItemClick(item)"
+                (mouseenter)="onHoverItem(item)"
+                (mouseleave)="onLeaveItem(item)">
+                <button [ngClass]="newItemsBackground"
+                type="button" class="btn item-box px-4" data-toggle="modal" data-target="#itemModal">
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="modal" tabindex="-1" role="dialog" aria-labelledby="#itemModal" id="itemModal" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content modal-content-custom">
+                <div class="modal-body modal-body-custom p-4">
+                    <button type="button" class="close position-absolute btn-cancel" data-dismiss="modal"
+                        aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <button type="button" class="btn item-box-modal w-100">
+                        Item #{{modalData}}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

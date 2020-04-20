@@ -10,4 +10,18 @@ nav {
 .navbar-toggler-custom {
     border: none;
 }
+
+/* Dispositivos moviles */
+@media (max-width: 575.98px) { 
+    .navbar-custom {
+        min-height: 8.5vh;
+    }
+}
+
+/* Dispositivos pequeños y medianos como tablets */
+@media (min-width: 576px) and (max-width: 991.98px) { 
+    .navbar-custom {
+        min-height: 8vh;
+    }
+}
   
